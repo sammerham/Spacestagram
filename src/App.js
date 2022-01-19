@@ -8,10 +8,32 @@ import DisplayError from './components/DisplayError';
 import env from "react-dotenv";
 const KEY = 'localStorage';
 
+
+
+/*
+ * App
+ *
+ * 
+ * State: 
+ *      Data 
+ *      updatedData
+ *      isLoading
+ *      errorMessages
+ *        
+ * props: 
+        None
+  * State: 
+        None      
+ * App ---->> CardList ----> CardItem 
+                      -----> Introduction
+ */
+
+
+
+
 function App() {
   const [data, setData] = useState([]);
   const [updatedData, setUpdatedData] = useState([]);
-  const [items, setItems] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
   const [errorMessages, setErrorMessages] = useState('');
 
@@ -36,20 +58,20 @@ function App() {
   useEffect(() => {
     const dataLikes = data.map(el => ({...el, like:false}));
     setUpdatedData(d => dataLikes)
-  }, [data]);
+  }, []);
   
 
   //get items from localStorage
   useEffect(() => {
     const savedItems = JSON.parse(localStorage.getItem(KEY));
-    setItems(savedItems);
+    setUpdatedData(savedItems);
   }, []);
   
   
   // save items in local storage
   useEffect(() => {
-    localStorage.setItem(KEY, JSON.stringify(data));
-  }, [data]);
+    localStorage.setItem(KEY, JSON.stringify(updatedData));
+  }, [updatedData]);
   
 
 // LIKE FEATURE
@@ -68,12 +90,9 @@ function App() {
     }));
   };
 
-
-
-
   
   return (
-    <NasaContext.Provider value={{ items, data, toggleLikeCard, updatedData }}>  
+    <NasaContext.Provider value={{  toggleLikeCard, updatedData }}>  
       <div className="App">
         {
           !isLoading && data.length

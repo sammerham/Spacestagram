@@ -1,5 +1,18 @@
 import React from 'react';
 
+/*
+ * Introduction
+ *
+ * This is the page where you rednder main title and subtitle
+ * State: None
+ *        
+ * props: 
+        None
+  * State: 
+        None      
+ * App ---->> CardList ----> Introduction
+                
+ */
 function Introduction() {
   return (
     <div>

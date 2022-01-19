@@ -3,6 +3,22 @@ import NasaContext from '../naseContext';
 import CardItem from './CardItem';
 import Introduction from './Introduction';
 
+/*
+ * CardList
+ *
+ * This is the page where you rednder a list of all CardItem
+ * State: None
+ *        
+ * props: 
+        None
+  * State: 
+        None      
+ * App ---->> CardList ----> CardItem 
+                       -----> Introduction
+ */
+
+
+
 function CardList() {
   const { updatedData } = useContext(NasaContext);
 

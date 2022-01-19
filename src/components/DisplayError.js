@@ -7,7 +7,7 @@ import Alert from "react-bootstrap/Alert";
  */
 
 function DisplayError({ errors }) {
-  console.log('erros in Display', errors)
+
 
   // let errorString = errors.join(", ")
   return <Alert variant="danger">{errors}</Alert>
