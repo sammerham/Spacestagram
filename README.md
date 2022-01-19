@@ -5,6 +5,12 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 ## Available Scripts
 
 In the project directory, you can run:
+### API KEY 
+add your API key in .envSample file and changce its name into .env
+you get get free API key from below:
+https://api.nasa.gov/
+
+after your sign up.
 
 ### `npm start`
 
